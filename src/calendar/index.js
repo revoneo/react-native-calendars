@@ -258,6 +258,7 @@ class Calendar extends Component {
     }
     return (
       <View style={[this.style.container, this.props.style]}>
+        <View style={this.style.monthView}>{weeks}</View>
         <CalendarHeader
           theme={this.props.theme}
           hideArrows={this.props.hideArrows}
@@ -272,7 +273,6 @@ class Calendar extends Component {
           onPressArrowLeft={this.props.onPressArrowLeft}
           onPressArrowRight={this.props.onPressArrowRight}
         />
-        <View style={this.style.monthView}>{weeks}</View>
       </View>);
   }
 }
