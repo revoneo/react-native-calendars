@@ -123,9 +123,19 @@ class CalendarHeader extends Component {
         <View>
           <View style={this.style.week}>
             {this.props.weekNumbers && <Text allowFontScaling={false} style={this.style.dayHeader}></Text>}
-            {weekDaysNames.map((day, idx) => (
-              <Text allowFontScaling={false} key={idx} accessible={false} style={this.style.dayHeader} numberOfLines={1} importantForAccessibility='no'>{day}</Text>
-            ))}
+            {weekDaysNames.map((day, idx) => {
+              let style = JSON.parse(JSON.stringify(this.style.dayHeader));
+              if (idx === 0) {
+                style.color = "red";
+              } else if (idx === 6) {
+                style.color = "blue";
+              } else {
+                style.color = "black";
+              }
+              return (
+                <Text allowFontScaling={false} key={idx} accessible={false} style={style} numberOfLines={1} importantForAccessibility='no'>{day}</Text>
+              );
+            })}
           </View>
         </View>
       );
