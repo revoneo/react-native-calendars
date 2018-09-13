@@ -14,22 +14,24 @@ export default function(theme={}) {
       alignItems: 'center'
     },
     monthText: {
-      fontSize: appStyle.textMonthFontSize,
-      fontFamily: appStyle.textMonthFontFamily,
-      fontWeight: appStyle.textMonthFontWeight,
-      color: appStyle.monthTextColor,
-      margin: 10
+      fontSize: 14,
+      fontFamily: "Helvetica Neue",
+      color: "#454545",
+      margin: 10,
+      marginTop: 16,
+      lineHeight: 15
     },
     arrow: {
-      padding: 10
+      padding: 10,
+      paddingLeft: 1
     },
     arrowImage: {
       ...Platform.select({
         ios: {
-          tintColor: appStyle.arrowColor
+          tintColor: "#454545"
         },
         android: {
-          tintColor: appStyle.arrowColor
+          tintColor: "#454545"
         }
       })
     },
